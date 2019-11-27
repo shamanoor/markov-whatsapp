@@ -3,8 +3,11 @@ import markov
 import reportlab_markov
 import sentiment_analysis
 
+# remove empty lines
+chat = clean_chat.remove_white_lines('chat.txt')
+
 # replace names
-chat = clean_chat.replace_names('chat.txt')
+chat = clean_chat.replace_names(chat.name)
 
 # generate chat WORKS WELL
 generated = markov.generate(chat.name)
