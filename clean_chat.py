@@ -1,5 +1,15 @@
 # ADD OLD DATES AND TIMES OF MESSAGES SO IT IS CHRONOLOGICAL, REPLACE REAL NAMES WITH FICTIONAL NAMES
 
+def remove_white_lines(file):
+    stripped = open('chat_stripped.txt', 'w', encoding='utf-8')
+    with open(file, 'r', encoding='utf-8') as f:
+        for line in f:
+            if len(line) > 1:
+                # print("length of line: ", len(line), "line: ", line)
+                stripped.write(line)
+    stripped.close()
+    return stripped
+
 def replace_names(file):
     # NAMES TO REMOVE:
     # removed because of privacy reasons, replace * with a specific name from your chat in case you want to
